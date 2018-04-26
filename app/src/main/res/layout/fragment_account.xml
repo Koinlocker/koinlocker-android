@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wallet.koinlocker.fragments.AccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/currency_spinner"
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:entries="@array/crypto_currency_types"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance_layout"
+            android:layout_below="@+id/currency_spinner"
+            android:layout_centerInParent="true"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_balance"
+                android:layout_centerInParent="true"
+                android:id="@+id/totalBalance"
+                android:layout_margin="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_in_crypto_currency"
+                android:layout_below="@+id/totalBalance"
+                android:text="1.003 BTC"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_in_fiat_currency"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/totalBalance"
+                android:text="Rs.550000"/>
+
+        </RelativeLayout>
+
+        <!--<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/balance_layout"
+            android:id="@+id/accounts_layout"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accounts_text"/>
+
+        </RelativeLayout>-->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_acc"
+            android:id="@+id/add_account_button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="70dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

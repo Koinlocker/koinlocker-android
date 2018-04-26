@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="crypto_currency_types">
+        <item>Bitcoin</item>
+        <item>Bitcoin Cash</item>
+        <item>Bitcoin Gold</item>
+        <item>Dash</item>
+        <item>Ethereum</item>
+        <item>Litecoin</item>
+        <item>Zcash</item>
+    </string-array>
+    <string-array name="fiat_currency_types">
+        <item>EUR</item>
+        <item>INR</item>
+        <item>USD</item>
+    </string-array>
+</resources>

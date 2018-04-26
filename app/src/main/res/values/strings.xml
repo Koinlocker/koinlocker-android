@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KOINLOCKER</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_transaction">Send / Receive</string>
+    <string name="title_account">Koin Account</string>
+    <string name="title_settings">Device Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="total_balance">TOTAL BALANCE</string>
+    <string name="add_acc">Add A/C +</string>
+    <string name="backend_fiat_currency_text">Backend Fiat Currency</string>
+    <string name="backend_crypto_currency_text">Backend Crypto Currency</string>
+    <string name="accounts_text">ACCOUNTS</string>
+
+</resources>
