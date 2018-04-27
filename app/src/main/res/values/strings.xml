@@ -9,10 +9,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="total_balance">TOTAL BALANCE</string>
-    <string name="add_acc">Add A/C +</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="add_acc">+ A/C</string>
     <string name="backend_fiat_currency_text">Backend Fiat Currency</string>
     <string name="backend_crypto_currency_text">Backend Crypto Currency</string>
-    <string name="accounts_text">ACCOUNTS</string>
+    <string name="accounts_text">Accounts</string>
 
 </resources>

@@ -1,5 +1,10 @@
 package com.wallet.koinlocker;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,7 +13,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,13 +55,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     };
 
-    private void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.bottomViewContainer, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
 
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_account);
 
         final FrameLayout frameLayout = findViewById(R.id.bottomViewContainer);
         frameLayout.setOnTouchListener(new OnSwipeTouchListener(HomeActivity.this) {
@@ -75,19 +76,31 @@ public class HomeActivity extends AppCompatActivity {
             public void onSwipeRight() {
                 if(getVisibleFragment() instanceof SendAndReceiveFragment){
                     loadFragment(new AccountFragment());
+                    navigation.setSelectedItemId(R.id.navigation_account);
                 }else if(getVisibleFragment() instanceof AccountFragment){
                     loadFragment(new SettingsFragment());
+                    navigation.setSelectedItemId(R.id.navigation_settings);
                 }
-                //navigation.setItemIconTintList();
             }
             public void onSwipeLeft() {
                 if(getVisibleFragment() instanceof SettingsFragment){
                     loadFragment(new AccountFragment());
+                    navigation.setSelectedItemId(R.id.navigation_account);
                 }else if(getVisibleFragment() instanceof AccountFragment){
                     loadFragment(new SendAndReceiveFragment());
+                    navigation.setSelectedItemId(R.id.navigation_send_receive);
                 }
             }
         });
+    }
+
+
+
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.bottomViewContainer, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     public Fragment getVisibleFragment(){
@@ -101,5 +114,4 @@ public class HomeActivity extends AppCompatActivity {
         }
         return null;
     }
-
 }
