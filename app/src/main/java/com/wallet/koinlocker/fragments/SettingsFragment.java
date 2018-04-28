@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.wallet.koinlocker.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SettingsFragment extends Fragment {
 
 

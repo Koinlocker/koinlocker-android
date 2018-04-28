@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wallet.koinlocker.KoinSettingsActivity">
+
+    <TextView
+        android:id="@+id/backend_crypto_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/backend_crypto_currency_text"
+        style="@style/text_medium_heading_style"/>
+
+    <Spinner
+        android:id="@+id/settings_crypto_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backend_crypto_currency"
+        android:layout_marginLeft="20dp"
+        android:entries="@array/crypto_currency_types" />
+
+    <TextView
+        android:id="@+id/backend_fiat_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_crypto_spinner"
+        android:layout_margin="10dp"
+        android:text="@string/backend_fiat_currency_text"
+        style="@style/text_medium_heading_style"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_fiat_spinner"
+        android:layout_below="@+id/backend_fiat_currency"
+        android:layout_marginLeft="20dp"
+        android:entries="@array/fiat_currency_types" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sever_url_text"
+        android:text="@string/server_url_text_display"
+        android:layout_below="@+id/settings_fiat_spinner"
+        style="@style/text_medium_heading_style"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sever_url"
+        android:text="@string/server_url"
+        android:layout_below="@+id/sever_url_text"
+        android:layout_marginStart="10dp"
+        style="@style/text_style"/>
+
+</RelativeLayout>

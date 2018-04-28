@@ -4,5 +4,69 @@
     android:layout_height="match_parent"
     tools:context="com.wallet.koinlocker.fragments.SendAndReceiveFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@color/Gainsboro"
+            android:padding="10dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account #1"
+                android:id="@+id/transaction_account_name"
+                style="@style/text_medium_heading_style"
+                android:layout_margin="@dimen/left_right_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_balance_in_crypto"
+                android:text="1.003 BTC"
+                android:layout_below="@+id/transaction_account_name"
+                style="@style/text_medium_heading_style"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_balance_in_fiat"
+                android:text="Rs. 550000"
+                android:layout_below="@+id/transaction_balance_in_crypto"
+                style="@style/text_style"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/send_text"
+            android:id="@+id/send_button"
+            android:background="@color/green"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/receive_button"
+            android:text="@string/receive_text"
+            android:layout_below="@+id/send_button"
+            android:background="@color/red"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/left_right_margin"/>
+
+    </RelativeLayout>
+
 
 </FrameLayout>

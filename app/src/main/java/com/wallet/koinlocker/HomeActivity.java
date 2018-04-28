@@ -74,27 +74,26 @@ public class HomeActivity extends AppCompatActivity {
         frameLayout.setOnTouchListener(new OnSwipeTouchListener(HomeActivity.this) {
 
             public void onSwipeRight() {
-                if(getVisibleFragment() instanceof SendAndReceiveFragment){
+                if (getVisibleFragment() instanceof SendAndReceiveFragment) {
                     loadFragment(new AccountFragment());
                     navigation.setSelectedItemId(R.id.navigation_account);
-                }else if(getVisibleFragment() instanceof AccountFragment){
+                } else if (getVisibleFragment() instanceof AccountFragment) {
                     loadFragment(new SettingsFragment());
                     navigation.setSelectedItemId(R.id.navigation_settings);
                 }
             }
+
             public void onSwipeLeft() {
-                if(getVisibleFragment() instanceof SettingsFragment){
+                if (getVisibleFragment() instanceof SettingsFragment) {
                     loadFragment(new AccountFragment());
                     navigation.setSelectedItemId(R.id.navigation_account);
-                }else if(getVisibleFragment() instanceof AccountFragment){
+                } else if (getVisibleFragment() instanceof AccountFragment) {
                     loadFragment(new SendAndReceiveFragment());
                     navigation.setSelectedItemId(R.id.navigation_send_receive);
                 }
             }
         });
     }
-
-
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -103,15 +102,23 @@ public class HomeActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public Fragment getVisibleFragment(){
+    public Fragment getVisibleFragment() {
         FragmentManager fragmentManager = HomeActivity.this.getSupportFragmentManager();
         List<Fragment> fragments = fragmentManager.getFragments();
-        if(fragments != null){
-            for(Fragment fragment : fragments){
-                if(fragment != null && fragment.isVisible())
+        if (fragments != null) {
+            for (Fragment fragment : fragments) {
+                if (fragment != null && fragment.isVisible())
                     return fragment;
             }
         }
         return null;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
     }
 }

@@ -1,43 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wallet.koinlocker.AccountDetailsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--<TextView
         android:id="@+id/account_details_account_text"
-        android:text="Account #1"
         style="@style/text_heading_style"
-        android:layout_margin="15dp"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/account_details_balance_text"
-        android:text="Balance"
-        style="@style/text_style"
-        android:layout_below="@+id/account_details_account_text"
-        android:layout_centerHorizontal="true"/>
+        android:layout_margin="15dp"
+        android:text="Account #1" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/account_details_balance_fiat"
-        android:text="Rs. 550000"
-        style="@style/text_heading_style"
-        android:layout_below="@+id/account_details_balance_text"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:text="XPUB"
+        android:textSize="10sp" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/total_transactions_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/account_details_balance_crypto"
-        android:text="1.003 BTC"
-        style="@style/text_medium_heading_style"
-        android:layout_below="@+id/account_details_balance_fiat"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/left_right_margin">
+
+                <TextView
+                    android:id="@+id/account_details_balance_text"
+                    style="@style/text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Balance" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/account_details_balance_text"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/account_details_balance_fiat"
+                        style="@style/text_medium_heading_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs. 550000" />
+
+                    <TextView
+                        android:id="@+id/account_details_layout_pipe"
+                        style="@style/text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="|" />
+
+                    <TextView
+                        android:id="@+id/account_details_balance_crypto"
+                        style="@style/text_medium_heading_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.003 BTC" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/transactions_graph"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/total_transactions_layout"
+        android:layout_margin="@dimen/left_right_margin" />
+
+    <ListView
+        android:id="@+id/transactions_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactions_graph"
+        android:dividerHeight="0dp"
+        android:paddingTop="10dp" />
 
 </RelativeLayout>

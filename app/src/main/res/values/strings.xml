@@ -14,5 +14,17 @@
     <string name="backend_fiat_currency_text">Backend Fiat Currency</string>
     <string name="backend_crypto_currency_text">Backend Crypto Currency</string>
     <string name="accounts_text">Accounts</string>
+    <string name="xpub_text_display">XPUB</string>
+    <string name="sample_xpub">ypub6XHgvycxfugF1Z5rSrdJErrvaEAF4EWENy4BN4ZowrpiUm4cm6cUeyFQ4JbquE8BC7XzGc1PJTDtExQShzkvCdgQ2okrF9ZipdKLin8MKti</string>
+    <string name="server_url_text_display">Server URL</string>
+    <string name="server_url">https://btc-bitcore1.trezor.io</string>
+    <string name="device_name_text_display">Device Name</string>
+    <string name="pin_protection_text_display">PIN Protection</string>
+    <string name="check_recovery_seed_text_display">Check Recovery Seed</string>
+    <string name="wipe_device_text_display">Wipe Device</string>
+    <string name="pass_phrase_text_display">Passphrase</string>
+    <string name="send_text">Send</string>
+    <string name="receive_text">Receive</string>
+    <string name="enable_passphrase_text">Enable Passphrase</string>
 
 </resources>

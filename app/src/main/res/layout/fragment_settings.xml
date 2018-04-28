@@ -1,42 +1,156 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wallet.koinlocker.fragments.SettingsFragment">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/device_name_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/backend_crypto_currency_text"
-            android:id="@+id/backend_crypto_currency"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/left_right_margin">
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/crypto_currency_types"
-            android:layout_below="@+id/backend_crypto_currency"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/settings_crypto_spinner"/>
+            <TextView
+                android:id="@+id/device_name_text"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/left_right_margin"
+                android:text="@string/device_name_text_display"
+                android:textAlignment="viewEnd" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/backend_fiat_currency_text"
-            android:id="@+id/backend_fiat_currency"
-            android:layout_margin="10dp"
-            android:layout_below="@+id/settings_crypto_spinner"/>
+            <TextView
+                android:id="@+id/device_name"
+                style="@style/text_style"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:text="My KoinLocker"
+                android:textAlignment="viewStart" />
 
-        <Spinner
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/device_name_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/left_right_margin"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pin_protection_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/fiat_currency_types"
-            android:layout_below="@+id/backend_fiat_currency"
-            android:layout_marginLeft="20dp"/>
+            android:layout_below="@+id/device_name_layout"
+            android:layout_margin="@dimen/left_right_margin">
+
+            <TextView
+                android:id="@+id/pin_protection_text"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pin_protection_text_display"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/pin_protection_status"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="Enabled"
+                android:textAlignment="viewStart" />
+
+            <ImageButton
+                android:id="@+id/pin_protection_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/passphrase_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pin_protection_layout"
+            android:layout_margin="@dimen/left_right_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pass_phrase_text"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pass_phrase_text_display"
+                android:textAlignment="viewEnd" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/passphrase_status"
+                android:layout_marginLeft="20dp"
+                android:text="@string/enable_passphrase_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/check_recovery_seed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passphrase_layout"
+            android:layout_margin="@dimen/left_right_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/check_recovery_seed_text"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/check_recovery_seed_text_display"
+                android:textAlignment="viewEnd" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/check_recovery_seed_button"
+                android:layout_margin="20dp"
+                android:text="@string/check_recovery_seed_text_display"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wipe_device_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check_recovery_seed_layout"
+            android:layout_margin="@dimen/left_right_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/wipe_device_text"
+                style="@style/text_style"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wipe_device_text_display"
+                android:textAlignment="viewEnd" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/wipe_device_button"
+                android:layout_marginLeft="20dp"
+                android:text="@string/wipe_device_text_display"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

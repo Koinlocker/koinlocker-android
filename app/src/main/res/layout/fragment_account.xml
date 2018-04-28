@@ -19,11 +19,12 @@
             android:layout_margin="10dp"
             android:entries="@array/crypto_currency_types"
             android:popupBackground="#FFFFFF"
-            android:background="@drawable/gradient_spinner"/>
+            android:background="@drawable/gradient_spinner" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/koinSettings"
             android:layout_toRightOf="@+id/currency_spinner"
             app:srcCompat="@drawable/ic_settings_black_24dp"
             android:background="@android:color/white"
@@ -36,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/currency_spinner"
             android:text="@string/total_balance"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"/>
 
 
 
@@ -79,12 +81,12 @@
 
         <TextView
             android:id="@+id/account_text_display"
-            style="@style/text_style"
+            style="@style/text_medium_heading_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/balance_layout"
             android:text="@string/accounts_text"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"/>
 
         <ListView
@@ -104,7 +106,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="70dp"
             android:layout_marginRight="30dp"
-            android:text="@string/add_acc" />
+            android:text="@string/add_acc"
+            android:background="@android:color/white"/>
 
     </RelativeLayout>
 

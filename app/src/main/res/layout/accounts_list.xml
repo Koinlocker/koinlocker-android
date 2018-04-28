@@ -16,8 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            />
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:id="@+id/account_layout"
@@ -30,8 +29,7 @@
                 android:id="@+id/account_in_crypto_currency"
                 style="@style/text_style"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/account_layout_pipe"
@@ -45,18 +43,17 @@
                 android:id="@+id/account_in_fiat_currency"
                 style="@style/text_style"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_chevron_right_black_24dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="25dp"/>
+            android:layout_marginEnd="25dp"
+            app:srcCompat="@drawable/ic_chevron_right_black_24dp" />
 
     </RelativeLayout>
 
